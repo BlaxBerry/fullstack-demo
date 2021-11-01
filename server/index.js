@@ -1,20 +1,29 @@
 const express = require('express')
+const errorHandler = require('./middleware/errorHandler')
+const morgan = require('morgan')
+
 const app = express()
 
-app.use(express.json())
+// log
+app.use(morgan('dev'))
 
-// cors
+// request body
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
+
+// CORS 
 const cors = require('cors')
 app.use(cors())
 
-// routes 
-app.post('/admin/api/category/create', (req, res) => {
-    res.send(111)
+// route 404
+app.use((req, res, next) => {
+    res.status(404).send({
+        error: '404, Not Found'
+    })
 })
 
+// error handler middleware
+app.use(errorHandler())
 
-
-
-app.listen(3000, () => {
-    console.log('Server running at http://localhost:3000');
-})
+const port = process.env.PORT || 800
+app.listen(port, () => { console.log(`Server Running at http://localhost:${port}`) })
