@@ -1,5 +1,4 @@
 import * as React from "react"
-
 import Seo from "../components/Seo/seo"
 
 const NotFoundPage = () => (

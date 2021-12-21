@@ -7,6 +7,7 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-antd',
+    `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     {

@@ -1,15 +1,25 @@
 import React from 'react'
-import Header from '../Header/header'
+import { Layout as AntdLayout } from 'antd';
+const { Content } = AntdLayout;
+import Sider from '../Nav/Sider/Sider'
+import Header from '../Header/Header'
+import Footer from '../Footer/Footer';
 
-export default function layout({ children }) {
+export default function Layout({ children, pathName }) {
+
     return (
-        <>
-            <Header />
-            <div>
-                {children}
+        <AntdLayout>
+            {/* left sider */}
+            <Sider pathName={pathName}/>
 
-                <div>Footer</div>
-            </div>
-        </>
+            {/* content */}
+            <AntdLayout>
+                <Header />
+                <Content style={{ padding: "1rem" }}>
+                    <div>{children}</div>
+                </Content>
+                <Footer />
+            </AntdLayout>
+        </AntdLayout>
     )
 }
