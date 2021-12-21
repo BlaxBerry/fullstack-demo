@@ -1,0 +1,42 @@
+.header {
+  display: flex;
+  align-items: center;
+  height: 52px !important;
+
+  h1 {
+    margin: 0;
+    color: #fff;
+  }
+}
+
+.sider {
+  overflow: auto;
+  min-height: 100vh;
+  // position: fixed;
+  left: 0;
+  z-index: 999;
+
+  ul {
+    margin-top: -4px;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 0;
+    width: 100%;
+    color: #fff !important;
+
+    &:hover {
+      color: #fff !important;
+    }
+  }
+}
+
+.footer {
+  background: #fff;
+  text-align: center;
+  padding: 1rem !important;
+}
