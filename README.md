@@ -6,16 +6,20 @@
 
 [chekc more ->](./Client/README.md)
 
+- Gatsby
 - React
+- TypeScript
 - Material UI
-- Axios / Graphql?
 - Sass
+- Axios / Graphql?
 
 ### Client Admin
 
 [chekc more ->](./Admin/README.md)
 
 - Gatsby
+- React
+- TypeScript
 - AntDesign
 - Apollo Client
 - QraphQL

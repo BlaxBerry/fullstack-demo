@@ -6,6 +6,7 @@ module.exports = {
     siteUrl: `https://github.com/BlaxBerry`,
   },
   plugins: [
+    'gatsby-plugin-antd',
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     {

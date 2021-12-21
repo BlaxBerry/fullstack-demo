@@ -1,12 +1,18 @@
 import * as React from "react"
 // import { Link } from "gatsby"
 import Seo from "../components/Seo/seo"
+import { Button } from 'antd';
 
 const IndexPage = () => (
   <>
     <Seo title="Home" />
-    
-    admin home
+
+    <h1>admin home</h1>
+
+    <Button type="primary">Primary Button</Button>
+    <Button>Default Button</Button>
+    <Button type="dashed">Dashed Button</Button>
+
     {/* <p>
       <Link to="/page-2/">Go to page 2</Link> <br />
       <Link to="/using-typescript/">Go to "Using TypeScript"</Link> <br />
