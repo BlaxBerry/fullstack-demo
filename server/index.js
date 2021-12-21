@@ -1,29 +1,40 @@
 const express = require('express')
-const errorHandler = require('./middleware/errorHandler')
-const morgan = require('morgan')
-
 const app = express()
 
-// log
-app.use(morgan('dev'))
+// 导入 Express GraphQL 相关
+const { graphqlHTTP } = require('express-graphql')
+const { buildSchema } = require('graphql');
 
-// request body
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
+// 创建 schema 查询和类型
+const schema = buildSchema(`
+    type User {
+        name: String
+        age: Int
+    }
 
-// CORS 
-const cors = require('cors')
-app.use(cors())
+    type Query {
+        user: User
+    }
+`)
 
-// route 404
-app.use((req, res, next) => {
-    res.status(404).send({
-        error: '404, Not Found'
+// 定义 schema 的对应处理器 resolver
+const rootValue = {
+    user: () => ({
+        name: () => "Andy",
+        age: () => 28,
     })
+}
+
+// 挂载 graphql 中间件
+app.use('/graphql', graphqlHTTP({
+    schema,
+    rootValue,
+    graphiql: true, // 开启浏览器的 Graphql IDE 调试工具
+}))
+
+
+const port = 8080
+app.listen(port, () => {
+    console.log(`GraphQL API server running at http://localhost:${port}`);
+    console.log(`GraphQL IDE running at http://localhost:${port}/graphql`);
 })
-
-// error handler middleware
-app.use(errorHandler())
-
-const port = process.env.PORT || 800
-app.listen(port, () => { console.log(`Server Running at http://localhost:${port}`) })

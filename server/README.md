@@ -1,11 +1,1 @@
-# API Server Side
-
-## Start
-
-```bash
-npm i
-```
-
-```bash
-npm run serve
-```
+# Fullstack Wedding Site - Server

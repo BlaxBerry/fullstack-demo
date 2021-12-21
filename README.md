@@ -1,24 +1,30 @@
-# Fullstack
+# Fullstack Wedding Site
 
-## Tech Task
-- **Client Side**
-    - PC / Responsive
-    - Vue / React
-    - Vuetify / Material UI
-    - Axios
+## Tech Stacks
 
-- **Admin Management**
-    - Vue2
-    - Vue-Cli
-    - Vue-Router
-    - Vuex
-    - Element UI
-    - Scss
-    - Axios
+### Client Front
 
-- **Server Side**
-    - Node.js
-    - Express.js
+[chekc more ->](./Client/README.md)
 
-- **Database**
-    - MongoDB (MLab?)
+- React
+- Material UI
+- Axios / Graphql?
+- Sass
+
+### Client Admin
+
+[chekc more ->](./Admin/README.md)
+
+- Gatsby
+- AntDesign
+- Apollo Client
+- QraphQL
+
+### Server
+
+[chekc more ->](./Server/README.md)
+
+- Node.js
+- Express.js
+- GraphQL
+- Express-GraphQL
