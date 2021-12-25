@@ -1,1 +1,13 @@
-@import "./nav.scss";
+@import "./cover.scss";
+@import "./layout.scss";
+@import "./common.scss";
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+
+li {
+  list-style: none;
+}

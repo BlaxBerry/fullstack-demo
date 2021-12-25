@@ -6,7 +6,8 @@ import {
     TeamOutlined,
     DollarCircleOutlined,
     EditOutlined,
-    SettingOutlined
+    SettingOutlined,
+    ClockCircleOutlined
 } from '@ant-design/icons';
 
 export const DEFAULT_SIDER = [
@@ -20,7 +21,11 @@ export const DEFAULT_SIDER = [
         to: "/dress",
         icon: < SkinOutlined />
     },
-
+    {
+        title: "日期",
+        to: "/date",
+        icon: <ClockCircleOutlined />
+    },
     {
         title: "景点",
         to: "/spots",

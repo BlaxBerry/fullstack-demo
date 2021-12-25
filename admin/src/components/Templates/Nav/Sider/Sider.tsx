@@ -3,10 +3,10 @@ import { Link } from 'gatsby';
 import { Layout, Menu, Button } from 'antd';
 const { Sider: AntdSider } = Layout;
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
-import { DEFAULT_SIDER } from '../../../lib/default/index'
+import { DEFAULT_SIDER } from '../../../../lib/default/index'
 
 
-export default function Sider({ pathName }) {
+export default function Sider({ pathname }) {
     const localStorageCollapsedStatus = localStorage.getItem('wedding-nav-collapsed')?.toString()
     const status = localStorageCollapsedStatus && localStorageCollapsedStatus === 'true' ? true : false
     const [collapsed, setCollapsed] = useState(status)
@@ -24,7 +24,7 @@ export default function Sider({ pathName }) {
             collapsed={collapsed}
         >
             {/* logo */}
-            <Button type="link" className='header' onClick={toggle}>
+            <Button type="link" className='side-btn' onClick={toggle}>
                 {
                     collapsed
                         ? <RightOutlined />
@@ -32,7 +32,7 @@ export default function Sider({ pathName }) {
                 }
             </Button>
             {/* menu */}
-            <Menu theme="dark" mode="inline" defaultSelectedKeys={[pathName]}>
+            <Menu theme="dark" mode="inline" defaultSelectedKeys={[pathname]}>
                 {
                     DEFAULT_SIDER.map((item, index) => (
                         <Menu.Item key={item.to} icon={item.icon}>

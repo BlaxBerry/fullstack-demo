@@ -1,14 +1,14 @@
 import * as React from "react"
-import Seo from "../components/Seo/seo"
+import Seo from "../../components/Seo/seo"
 import { PageProps } from 'gatsby'
 
 const IndexPage = ({ location }: PageProps) => {
 
     return (
         <>
-            <Seo title="亲友" />
+            <Seo title="笔记" />
 
-            亲友
+            笔记
         </>
     )
 }

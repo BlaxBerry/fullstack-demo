@@ -5,21 +5,23 @@ import Sider from '../Nav/Sider/Sider'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer';
 
-export default function Layout({ children, pathName, location }) {
+export default function Layout({ children, location }) {
 
     return (
         <AntdLayout>
             {/* left sider */}
-            <Sider pathName={pathName} />
+            <Sider pathname={location.pathname} />
 
-            {/* content */}
+            {/* right content */}
             <AntdLayout>
                 <Header />
-                <Content style={{ padding: "1rem" }}>
-                    <div>{children}</div>
+                <Content className='layout-content'>
+                    <div className='main-content'>
+                        {children}
+                    </div>
+                    <Footer />
                 </Content>
-                <Footer />
             </AntdLayout>
-        </AntdLayout>
+        </AntdLayout >
     )
 }
