@@ -1,1 +1,1 @@
-export * from './DEFAULT_SIDER'
+export * from './NAVIGATION'

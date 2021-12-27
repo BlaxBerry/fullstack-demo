@@ -4,15 +4,9 @@ import React from 'react'
 export default function DetailsProgressBar({ dataSource }) {
 
     // 通过日期查询数据库数据
-    const { list } = dataSource
+    const { list } = dataSource.list || []
     // console.log(list);
 
-
-
-    list.forEach(item => {
-        item.color
-
-    })
 
 
     const final = [
@@ -29,7 +23,6 @@ export default function DetailsProgressBar({ dataSource }) {
     final.forEach(item => {
         totalCount += item.count
     })
-    console.log(totalCount);
 
 
     return (

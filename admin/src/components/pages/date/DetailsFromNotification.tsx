@@ -2,7 +2,7 @@ import React from 'react'
 import { navigate } from 'gatsby';
 import { Badge, Button, notification, Space } from 'antd';
 import { FrownOutlined } from '@ant-design/icons';
-import { DividerTitle } from '../../common/Title';
+import { DividerTitle } from '../../common/index';
 
 
 const DetailsFromNotification = (date, list) => {
@@ -64,7 +64,7 @@ const btn = (key, date, list) => (
 
 const edit = (key, date, list) => {
     notification.close(key)
-    navigate('/date/edit', { state: { date, list } })
+    navigate('/admin/date/edit', { state: { date, list } })
 }
 const close = (key) => notification.close(key)
 

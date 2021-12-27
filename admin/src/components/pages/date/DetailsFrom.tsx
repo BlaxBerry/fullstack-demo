@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { v4 as uuidv4 } from 'uuid';
 import { Link, navigate } from 'gatsby';
+import { PlusOutlined, DeleteOutlined } from '@ant-design/icons';
 import {
     Form,
     Input,
@@ -10,11 +11,12 @@ import {
     Row,
     Col,
     Badge,
-    Popconfirm
+    Popconfirm,
+    DatePicker
 } from 'antd';
-import { PlusOutlined, DeleteOutlined } from '@ant-design/icons';
 const { Option } = Select;
-
+import 'moment/locale/zh-cn';
+import locale from 'antd/es/date-picker/locale/zh_CN';
 
 // {
 //     date: "2021-11-29",
@@ -27,21 +29,20 @@ const { Option } = Select;
 const DEFAULT_COLOR_OPTIONS = ["yellow", "red", "pink", "green", "blue", "purple"]
 
 export default function DateDetailsForm({ dataSource }) {
-
     const [data, setData] = useState(dataSource)
     const [form] = Form.useForm();
 
-    useEffect(() => {
-        if (!data) { navigate('/date') }
-    }, [])
-
     const onFinish = (value: any) => {
-        const finalList = value.list.map((item: any) => {
+        const { date, list } = value
+        let newList = list ? list.map((item: any) => {
             if (!item.id) { item.id = uuidv4() }
             return item
-        })
-        value.list = finalList
-        console.log(value);
+        }) : []
+        const finalValue = {
+            date: date.format('YYYY-MM-DD'),
+            list: newList
+        }
+        console.log(finalValue);
     }
 
     return (
@@ -51,8 +52,18 @@ export default function DateDetailsForm({ dataSource }) {
             initialValues={data}
             onFinish={onFinish}
         >
-            <Form.Item name="date" label="日期">
-                <Input disabled={data?.date} />
+            <Form.Item name="date" label="日期" rules={[{ required: true, message: '不能为空' }]}>
+                {
+                    data?.date
+                        ? <Input disabled style={{ width: "100%", textAlign: "center" }} />
+                        : (
+                            <DatePicker
+                                placeholder="选择日期"
+                                style={{ width: "100%", textAlign: "center" }}
+                                locale={locale}
+                            />
+                        )
+                }
             </Form.Item>
 
 
@@ -69,7 +80,7 @@ export default function DateDetailsForm({ dataSource }) {
                                         // label={"类型"}
                                         rules={[{ required: true, message: '不能为空' }]}
                                     >
-                                        <Select placeholder="类型" size='large'>
+                                        <Select placeholder="类">
                                             {
                                                 DEFAULT_COLOR_OPTIONS.map(c => (
                                                     <Option value={c} key={c}>
@@ -87,7 +98,7 @@ export default function DateDetailsForm({ dataSource }) {
                                         // label="事项"
                                         rules={[{ required: true, message: '不能为空' }]}
                                     >
-                                        <Input placeholder='事项内容' size="large" />
+                                        <Input placeholder='事项内容' />
                                     </Form.Item>
                                 </Col>
 
@@ -124,7 +135,7 @@ export default function DateDetailsForm({ dataSource }) {
                         保存
                     </Button>
                     <Button danger type="primary">
-                        <Link to="/date">返回</Link>
+                        <Link to="/admin/date/calendar">日历一览</Link>
                     </Button>
                 </Space>
             </Form.Item>

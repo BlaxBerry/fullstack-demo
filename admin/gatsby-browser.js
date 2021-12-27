@@ -1,19 +1,10 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- * You can delete this file if you're not using it
- * @see https://www.gatsbyjs.com/docs/browser-apis
- */
 import React from "react";
+import { ConfigProvider } from 'antd';
 import { ApolloProvider } from "@apollo/client";
 import client from "./src/Apollo";
-import Layout from "./src/components/Templates/Layout/Layout";
+import Layout from "./src/components/Layout/Layout.tsx";
 import "./src/style/index.scss";
-import { ConfigProvider } from 'antd';
-
 import zhCN from 'antd/lib/locale/zh_CN';
-import moment from 'moment';
-import 'moment/locale/zh-cn';
-moment.locale('zh-cn');
 
 /**
  * @see https://www.gatsbyjs.com/docs/reference/config-files/gatsby-browser#wrapRootElement

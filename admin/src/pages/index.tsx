@@ -1,18 +1,13 @@
-import * as React from "react"
-import { useState } from "react"
-import Seo from "../components/Seo/seo"
-import { PageProps } from 'gatsby'
+import React from 'react'
+import { navigate } from 'gatsby'
 
+const IndexPage = (): JSX.Element => {
 
-const IndexPage = ({ location }: PageProps) => {
+    React.useEffect(() => {
+        navigate('/admin')
+    }, [])
 
-    return (
-        <>
-            <Seo title="首页" />
-
-            首页
-        </>
-    )
+    return <></>
 }
 
 export default IndexPage
