@@ -1,5 +1,5 @@
 import React from 'react'
-import { Row, Col, Progress } from 'antd';
+import { Row, Col } from 'antd';
 import Seo from "../../../components/Seo/seo"
 import { DividerTitle } from '../../../components/common/index';
 import { DateDetailsFrom, DetailsProgressBar } from '../../../components/pages/date/index'
@@ -11,7 +11,7 @@ export default function details({ location }) {
 
     return (
         <>
-            <Seo title="日期详情" />
+            <Seo title="事项" />
             <Row>
                 <Col xs={24} sm={24} md={24} lg={12}>
                     {/* title */}

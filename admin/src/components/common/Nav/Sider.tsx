@@ -14,8 +14,6 @@ const logoStyle: CSSProperties = {
     margin: 0
 }
 
-console.log(NAVIGATION);
-
 
 export default function SideNav({ pathname }) {
 
@@ -38,7 +36,7 @@ export default function SideNav({ pathname }) {
     return (
         <Menu
             defaultSelectedKeys={[pathname]}
-            defaultOpenKeys={['日期','亲友']}
+            defaultOpenKeys={['日期']}
             mode="inline"
             theme="dark"
             onSelect={select}

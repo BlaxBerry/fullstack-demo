@@ -1,8 +1,7 @@
 import React, { useState } from "react"
-import Seo from "../../../components/Seo/seo"
 import { PageProps } from 'gatsby'
 import { Image } from 'antd';
-
+import Seo from "../../../components/Seo/seo"
 
 const IndexPage = () => {
     const [visible, setVisible] = useState(false)

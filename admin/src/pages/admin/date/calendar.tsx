@@ -83,7 +83,7 @@ const IndexPage = ({ location }: PageProps) => {
 
   return (
     <>
-      <Seo title="首页" />
+      <Seo title="日历" />
 
       {/* <Typography.Title level={3}>举行日期</Typography.Title> */}
       <div style={{ height: "60%" }}>
