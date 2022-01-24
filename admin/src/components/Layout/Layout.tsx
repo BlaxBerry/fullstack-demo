@@ -1,71 +1,56 @@
-import React, { CSSProperties } from 'react'
-import { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useBoolean } from 'ahooks'
+import { Link } from 'gatsby';
 import { Layout as AntLayout, Button, } from 'antd';
-const {
-    Header: AntHeader,
-    Footer: AntFooter,
-    Sider: AntSider,
-    Content: AntContent
-} = AntLayout
 import { RightOutlined, LeftOutlined } from '@ant-design/icons';
 import { SiderNav, Footer } from '../common/index'
 
-type Style = {
-    layout: CSSProperties,
-    sider: CSSProperties,
-    header: CSSProperties,
-    content: CSSProperties,
-}
-const style: Style = {
-    layout: {
-        minHeight: '100vh'
-    },
-    sider: {
-
-    },
-    header: {
-        padding: "1rem"
-    },
-    content: {
-        overflowY: "scroll",
-        height: "100vh",
-        backgroundColor: "white"
-    }
-}
-
-
+const {
+    Header: AntHeader,
+    Sider: AntSider,
+    Content: AntContent
+} = AntLayout
 
 export default function Layout({ children, location }) {
-    const [collapsed, setCollapsed] = useState(false)
-    const toggleCollapsed = () => {
-        setCollapsed(collapsed => !collapsed)
-    };
+    // toggle collapsed state
+    const [state, { toggle }] = useBoolean(false)
 
     return (
-        <AntLayout style={style.layout}>
+        <AntLayout className='wrap-layout'>
 
             {/* left sider  */}
-            <AntSider trigger={null} collapsible collapsed={collapsed}>
+            <AntSider
+                className='wrap-layout-side'
+                trigger={null}
+                collapsible
+                collapsed={state}
+            >
+                <div className='logo'>
+                    <Link to="/">
+                        <img src="/logo.png" alt="logo" />
+                        {state ? null : <span>Wedding</span>}
+                    </Link>
+                </div>
                 <SiderNav pathname={location.pathname} />
-                <Button type="link" onClick={toggleCollapsed} className='nav-sider-toggle-btn'>
-                    {collapsed ? <RightOutlined /> : <LeftOutlined />}
+                <Button className='sider-collapsed-toggle-btn' type="link" onClick={toggle}>
+                    {state ? <RightOutlined /> : (<><LeftOutlined />&nbsp;&nbsp;折叠</>)}
                 </Button>
             </AntSider>
 
             {/* right content */}
-            <AntLayout style={style.content}>
+            <AntLayout className='layout-wrap-content'>
                 {/* header */}
-                <AntHeader style={style.header}>
-
-                </AntHeader>
+                <AntHeader className='wrap-content-header' />
                 {/* main content */}
-                <AntContent style={{ padding: '1rem' }}>
+                <AntContent className='wrap-content-content'>
                     <>
-                        {children}
+                        <div className="content">
+                            {children}
+                        </div>
+                        {/* footer */}
+                        <Footer />
                     </>
                 </AntContent>
-                {/* footer */}
-                {/* <AntFooter> <Footer /> </AntFooter> */}
             </AntLayout>
         </AntLayout>
     )

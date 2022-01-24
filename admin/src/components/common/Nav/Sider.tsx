@@ -1,24 +1,12 @@
-import React, { CSSProperties } from 'react'
-import { useEffect, useState } from 'react'
+import React from 'react'
 import { Menu } from 'antd';
 import { NAVIGATION } from '../../../lib/default';
 import { Link } from 'gatsby';
-const { SubMenu } = Menu;
-
-const logoStyle: CSSProperties = {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    textAlign: "center",
-    height: "60px",
-    margin: 0
-}
-
 
 export default function SideNav({ pathname }) {
 
     const setSubMenuLayout = (item) => (
-        <SubMenu key={item.name} icon={item.icon || null} title={item.name}>
+        <Menu.SubMenu key={item.name} icon={item.icon || null} title={item.name}>
             {
                 item.sub.map(subItem => (
                     <Menu.Item key={subItem.to} icon={subItem.icon || null}>
@@ -26,7 +14,7 @@ export default function SideNav({ pathname }) {
                     </Menu.Item>
                 ))
             }
-        </SubMenu>
+        </Menu.SubMenu>
     )
 
     const select = ({ key }) => {
@@ -35,16 +23,13 @@ export default function SideNav({ pathname }) {
 
     return (
         <Menu
+            className='sider-nav-bar'
             defaultSelectedKeys={[pathname]}
-            defaultOpenKeys={['日期']}
+            defaultOpenKeys={['设置']}
             mode="inline"
             theme="dark"
             onSelect={select}
         >
-            <Menu.Item key="logo" style={logoStyle} title="婚礼筹备">
-                Logo
-            </Menu.Item>
-
             {
                 NAVIGATION.map((item, index) => (
                     <React.Fragment key={index}>

@@ -2,33 +2,26 @@
 
 ## Tech Stacks
 
-### Client Front
-
-[chekc more ->](./Client/README.md)
-
-- Gatsby
-- React
-- TypeScript
-- Material UI
-- Sass
-- Axios / Graphql?
-
 ### Client Admin
 
 [chekc more ->](./Admin/README.md)
 
-- Gatsby
-- React
-- TypeScript
-- AntDesign
-- Apollo Client
-- QraphQL
+- [Gatsby]() v4+
+- [React]()
+- [ahooks]()
+- [TypeScript]()
+- [AntDesign]() v4+
+- [Sass]() 5.0.0
+- [Apollo Client]()
+- [QraphQL]()
+- [yarn]() v1
 
 ### Server
 
 [chekc more ->](./Server/README.md)
 
-- Node.js
-- Express.js
-- GraphQL
-- Express-GraphQL
+- [Node.js]()
+- [Express.js]()
+- [GraphQL]()
+- [Express-GraphQL]()
+- [npm]()
