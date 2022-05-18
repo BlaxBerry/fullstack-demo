@@ -1,17 +1,29 @@
-# 
+#
+
+admin front side + server side + document
 
 ## Tech Stacks
 
 ### Front
 
-[chekc more ->]()
+[chekc more ->](./adminfront/README.md)
 
-- [Gatsby]() 
+- [Gatsby]()
 - [TypeScript]()
-- [AntDesign]() 
-- [Apollo Client]()
-- [yarn]() 
+- [AntDesign]()
+- [ApolloClient]()
 
 ### Server
 
+> Not Ready yet, still learning
+
 [chekc more ->]()
+
+- [Django]()
+- [Python]()
+
+### Document
+
+[chekc more ->](./document/README.md)
+
+- [Docusaurus]()

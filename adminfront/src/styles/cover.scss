@@ -1,0 +1,22 @@
+.ant-layout {
+  .ant-layout-header {
+    position: sticky;
+    top: 0;
+  }
+  .ant-layout-sider {
+    min-width: 85px !important;
+
+    .ant-layout-sider-children {
+      .ant-menu {
+        background-color: transparent !important;
+        position: sticky;
+        top: 64px;
+
+        .ant-menu-item {
+          margin-top: 0 !important;
+          margin-bottom: 8px !important;
+        }
+      }
+    }
+  }
+}
