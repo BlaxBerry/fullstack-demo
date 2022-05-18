@@ -1,20 +1,38 @@
 .ant-layout {
+  background: #001529 !important;
+
   .ant-layout-header {
+    background: #002140;
     position: sticky;
     top: 0;
+    z-index: 999;
   }
+
+  .ant-layout-footer {
+    align-items: center;
+    background-color: #001529;
+    color: #f0f2f5;
+    display: flex;
+    height: 48px;
+    justify-content: center;
+  }
+
   .ant-layout-sider {
-    min-width: 85px !important;
+    min-width: 85px;
+
+    .ant-layout-sider-trigger {
+      height: 48px;
+    }
 
     .ant-layout-sider-children {
       .ant-menu {
-        background-color: transparent !important;
+        height: 100%;
         position: sticky;
         top: 64px;
 
         .ant-menu-item {
-          margin-top: 0 !important;
-          margin-bottom: 8px !important;
+          margin-top: 0;
+          margin-bottom: 8px;
         }
       }
     }

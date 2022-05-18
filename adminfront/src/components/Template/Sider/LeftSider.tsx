@@ -38,7 +38,13 @@ const LeftSider = (props: LeftSiderProps): JSX.Element => {
   ]
 
   return (
-    <AntdSider collapsible collapsed={isCollapsed} onCollapse={toggle}>
+    <AntdSider
+      theme="dark"
+      collapsible
+      collapsed={isCollapsed}
+      onCollapse={toggle}
+      style={props.style}
+    >
       {/* header logo*/}
       <TopHeader>
         <div className="logo" style={{ textAlign: "center", color: "white" }}>
@@ -51,7 +57,6 @@ const LeftSider = (props: LeftSiderProps): JSX.Element => {
         defaultSelectedKeys={["1"]}
         mode="inline"
         items={items}
-        style={props.style}
       />
     </AntdSider>
   )
