@@ -1,27 +1,17 @@
-# Fullstack Wedding Site
+# 
 
 ## Tech Stacks
 
-### Client Admin
+### Front
 
-[chekc more ->](./Admin/README.md)
+[chekc more ->]()
 
-- [Gatsby]() v4+
-- [React]()
-- [ahooks]()
+- [Gatsby]() 
 - [TypeScript]()
-- [AntDesign]() v4+
-- [Sass]() 5.0.0
+- [AntDesign]() 
 - [Apollo Client]()
-- [QraphQL]()
-- [yarn]() v1
+- [yarn]() 
 
 ### Server
 
-[chekc more ->](./Server/README.md)
-
-- [Node.js]()
-- [Express.js]()
-- [GraphQL]()
-- [Express-GraphQL]()
-- [npm]()
+[chekc more ->]()
