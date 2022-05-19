@@ -14,7 +14,6 @@ interface ResultProps {
 const Result = (props: ResultProps): JSX.Element => {
   return (
     <AntdResult
-      className="custom-full-screen"
       status={props.status}
       title={props.title}
       subTitle={props.subTitle}

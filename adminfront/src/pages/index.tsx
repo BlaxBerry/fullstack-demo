@@ -1,34 +1,12 @@
-import * as React from "react"
-import Layout from "../components/Template"
-import BackToTop from "../components/Common/BackToTop"
+import { navigate } from "gatsby"
+import { useMount } from "ahooks"
 
-const IndexPage = (): JSX.Element => (
-  <Layout pageTitle={"Home"}>
-    <BackToTop>
-      xxxx
-      <div>Scroll to bottom</div>
-      <div>Scroll to bottom</div>
-      <div>Scroll to bottom</div>
-      <div>Scroll to bottom</div>
-      <div>Scroll to bottom</div>
-      <div>Scroll to bottom</div>
-      <div>Scroll to bottom</div>
-      <div>Scroll to bottom</div>
-      <div>Scroll to bottom</div>
-      <div>Scroll to bottom</div>
-      <div>Scroll to bottom</div>
-      <div>Scroll to bottom</div>
-      <div>Scroll to bottom</div>
-      <div>Scroll to bottom</div>
-      <div>Scroll to bottom</div>
-      <div>Scroll to bottom</div>
-      <div>Scroll to bottom</div>
-      <div>Scroll to bottom</div>
-      <div>Scroll to bottom</div>
-      <div>Scroll to bottom</div>
-      <div>Scroll to bottom</div>
-    </BackToTop>
-  </Layout>
-)
+const IndexPage = (): JSX.Element => {
+  useMount(() => {
+    navigate("/home")
+  })
+
+  return null
+}
 
 export default IndexPage

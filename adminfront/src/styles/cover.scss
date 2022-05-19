@@ -37,4 +37,13 @@ $antd-layout-footer-height: 48px;
       }
     }
   }
+
+  .ant-layout-content {
+    .true-content {
+      min-height: calc(
+        100vh - $antd-layout-header-height - $antd-layout-footer-height
+      );
+      padding: 20px 20px 0;
+    }
+  }
 }

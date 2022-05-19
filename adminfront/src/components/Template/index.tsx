@@ -24,7 +24,7 @@ const Layout = (props: LayoutProps): JSX.Element => (
       {/* content */}
       <AntdContent className="theme-light">
         {/* true content */}
-        <div style={{ padding: "20px 20px 0" }}>{props.children}</div>
+        <div className="true-content">{props.children}</div>
         {/* footer */}
         <AntdFooter style={{ textAlign: "center" }}>@BlaxBerry</AntdFooter>
       </AntdContent>
