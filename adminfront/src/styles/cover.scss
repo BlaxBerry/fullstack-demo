@@ -1,3 +1,6 @@
+$antd-layout-header-height: 64px;
+$antd-layout-footer-height: 48px;
+
 .ant-layout {
   background: #001529 !important;
 
@@ -13,23 +16,20 @@
     background-color: #001529;
     color: #f0f2f5;
     display: flex;
-    height: 48px;
+    height: $antd-layout-footer-height;
     justify-content: center;
   }
 
   .ant-layout-sider {
-    min-width: 85px;
+    position: sticky;
+    top: 0;
 
     .ant-layout-sider-trigger {
-      height: 48px;
+      height: $antd-layout-footer-height;
     }
 
     .ant-layout-sider-children {
       .ant-menu {
-        height: 100%;
-        position: sticky;
-        top: 64px;
-
         .ant-menu-item {
           margin-top: 0;
           margin-bottom: 8px;

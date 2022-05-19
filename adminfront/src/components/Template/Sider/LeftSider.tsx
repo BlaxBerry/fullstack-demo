@@ -54,7 +54,7 @@ const LeftSider = (props: LeftSiderProps): JSX.Element => {
       {/* menu */}
       <Menu
         theme="dark"
-        defaultSelectedKeys={["1"]}
+        defaultSelectedKeys={["item-1"]}
         mode="inline"
         items={items}
       />

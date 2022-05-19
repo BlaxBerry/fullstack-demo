@@ -1,3 +1,9 @@
 @import "./global.scss";
 @import "./cover.scss";
 @import "./theme.scss";
+
+.custom-full-screen {
+  min-height: calc(
+    100vh - $antd-layout-header-height - $antd-layout-footer-height - 20px
+  );
+}
