@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Button, Dropdown, Menu, MenuProps } from "antd"
+import { Dropdown, Menu, MenuProps } from "antd"
 import {
   AppstoreOutlined,
   MailOutlined,

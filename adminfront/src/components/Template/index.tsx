@@ -1,9 +1,11 @@
 import * as React from "react"
 import { Layout as AntdLayout } from "antd"
-const { Content: AntdContent, Footer: AntdFooter } = AntdLayout
 import LeftSider from "./Sider/LeftSider"
 import TopHeader from "./Header"
 import ContentHeader from "./Header/ContentHeader"
+import { PageTitle } from "../Common/Titles"
+
+const { Content: AntdContent, Footer: AntdFooter } = AntdLayout
 
 interface LayoutProps {
   pageTitle: string
@@ -12,6 +14,7 @@ interface LayoutProps {
 
 const Layout = (props: LayoutProps): JSX.Element => (
   <AntdLayout>
+    <PageTitle title={props.pageTitle} />
     {/* left sider */}
     <LeftSider style={{ height: "100vh" }} />
 
