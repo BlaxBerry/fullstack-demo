@@ -4,16 +4,6 @@ const { Paragraph } = Typography
 
 /* 普通文本省略相关属性
  * https://ant.design/components/typography-cn/#API
- *
- *  <Text text="xxxxxxx" ellipsis={false}/>
- *  <Text
- *      text="xxxxxxx"
- *      ellipsis={{
- *          rows: 3,
- *          symbol: 'show MMM',
- *          expandable: true,
- *      }}
- *  />
  */
 interface CustomEllipsis {
   rows: number /* 最多显示的行数 */
