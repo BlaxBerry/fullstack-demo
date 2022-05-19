@@ -7,7 +7,7 @@ import BackToTop from "../../components/Common/BackToTop"
 const IndexPage = (): JSX.Element => {
   const { t } = useTranslation()
   return (
-    <Layout pageTitle={t("pages.view-tatistics.title")}>
+    <Layout pageTitle={t("pages.views-statistics.title")}>
       <BackToTop>{t("pages.views-statistics.title")}</BackToTop>
     </Layout>
   )

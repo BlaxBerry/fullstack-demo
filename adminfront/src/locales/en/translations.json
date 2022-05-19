@@ -29,11 +29,11 @@
     "views": {
       "title": "Views"
     },
-    "viewsstatistics": {
-      "title": "Statistics"
+    "views-statistics": {
+      "title": "Views Statistics"
     },
-    "viewscreate": {
-      "title": "Create"
+    "views-create": {
+      "title": "Create View"
     },
     "404": {
       "title": "404"

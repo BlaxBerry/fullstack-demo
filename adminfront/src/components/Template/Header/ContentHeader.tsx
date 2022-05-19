@@ -6,7 +6,7 @@ import { HeaderSetting } from "../../Setting"
 const ContentHeader = (): JSX.Element => {
   return (
     <div style={{ textAlign: "right", color: "white", padding: "0 20px" }}>
-      <Dropdown overlay={<HeaderSetting />} placement="bottomRight" arrow>
+      <Dropdown overlay={<HeaderSetting />} placement="bottomRight">
         <SettingOutlined />
       </Dropdown>
     </div>

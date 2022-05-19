@@ -29,7 +29,7 @@ const LeftSider = (props: LeftSiderProps): JSX.Element => {
   const [isCollapsed, { toggle }] = useBoolean(false)
 
   const { state: routeState } = useLocation()
-  const pagename = routeState["pagename"]
+  const pagename = routeState?.["pagename"]
   const [menuItemDefaultSelectedKey] = useState(pagename || "home")
   const [menuSubmenuDefaultSelectedKey] = useState(
     pagename?.substr(0, pagename.indexOf("/")) || null

@@ -107,6 +107,7 @@ const HeaderSetting = (): JSX.Element => {
       label: (
         <Link
           to={useRouteChange("about")}
+          state={{ pagename: "about" }}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -142,7 +143,7 @@ const HeaderSetting = (): JSX.Element => {
     }
   }
 
-  return <Menu items={items} onClick={onSelected} />
+  return <Menu theme="dark" items={items} onClick={onSelected} />
 }
 
 export default HeaderSetting
