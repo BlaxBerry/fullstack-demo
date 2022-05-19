@@ -1,7 +1,8 @@
 import * as React from "react"
 import { useState } from "react"
-import { navigate } from "gatsby"
+import { Link } from "gatsby"
 import { useLocation } from "@reach/router"
+import { useTranslation } from "gatsby-plugin-react-i18next"
 import { useBoolean } from "ahooks"
 import { Layout as AntdLayout, Menu, MenuProps, SiderProps } from "antd"
 import {
@@ -15,6 +16,7 @@ import {
   VideoCameraOutlined,
 } from "@ant-design/icons"
 import TopHeader from "../Header"
+import useRouteChange from "../../../hooks/useRouteChange"
 
 const { Sider: AntdSider } = AntdLayout
 
@@ -23,72 +25,82 @@ interface LeftSiderProps extends SiderProps {
 }
 
 const LeftSider = (props: LeftSiderProps): JSX.Element => {
+  const { t } = useTranslation()
   const [isCollapsed, { toggle }] = useBoolean(false)
 
   const { state: routeState } = useLocation()
-  const pagename = routeState["pagename"]
-  const [menuItemDefaultSelectedKey] = useState(pagename || "home")
+  // const pagename = routeState["pagename"]
+  console.log(routeState)
+
+  console.log(useRouteChange("home"))
+
+  const [menuItemDefaultSelectedKey] = useState(/*pagename ||*/ "home")
   const [menuSubmenuDefaultSelectedKey] = useState(
-    pagename?.substr(0, pagename.indexOf("/")) || null
+    /*pagename?.substr(0, pagename.indexOf("/")) ||*/ null
   )
 
   const items: MenuProps["items"] = [
     {
-      label: "首页",
+      label: <Link to={useRouteChange("home")}>{t("pages.home.title")}</Link>,
       key: "home",
       icon: React.createElement(HomeOutlined),
     },
     {
-      label: "个人信息",
+      label: <Link to={useRouteChange("me")}>{t("pages.me.title")}</Link>,
       key: "me",
       icon: React.createElement(UserOutlined),
     },
     {
-      label: "媒体",
+      label: t("pages.medias.title"),
       key: "medias",
       icon: <SmileOutlined />,
       children: [
         {
-          label: "音乐",
+          label: (
+            <Link to={useRouteChange("medias/musics")}>
+              {t("pages.medias-musics.title")}
+            </Link>
+          ),
           key: "medias/musics",
           icon: <CustomerServiceOutlined />,
         },
         {
-          label: "视频",
+          label: (
+            <Link to={useRouteChange("medias/videos")}>
+              {t("pages.medias-videos.title")}
+            </Link>
+          ),
           key: "medias/videos",
           icon: <VideoCameraOutlined />,
         },
       ],
     },
     {
-      label: "页面统计",
+      label: t("pages.views.title"),
       key: "views",
       icon: React.createElement(AppstoreOutlined),
       children: [
         {
-          label: "数据详情",
+          label: (
+            <Link to={useRouteChange("views/statistics")}>
+              {t("pages.views-statistics.title")}
+            </Link>
+          ),
           key: "views/statistics",
           icon: React.createElement(PieChartOutlined),
         },
         {
-          label: "新增页面",
+          label: (
+            <Link to={useRouteChange("views/create")}>
+              {t("pages.views-create.title")}
+            </Link>
+          ),
           key: "views/create",
           icon: React.createElement(PlusOutlined),
         },
       ],
     },
   ]
-
-  // route change
-  const onMenuSelect = ({ key }) => {
-    // [key] equal route url path
-    navigate(`/${key}`, {
-      state: {
-        // TODO: 若如需要视情况传递参数
-        pagename: key,
-      },
-    })
-  }
 
   return (
     <AntdSider
@@ -111,7 +123,7 @@ const LeftSider = (props: LeftSiderProps): JSX.Element => {
         defaultOpenKeys={[menuSubmenuDefaultSelectedKey]}
         mode="inline"
         items={items}
-        onSelect={onMenuSelect}
+        // onSelect={onMenuSelect}
       />
     </AntdSider>
   )

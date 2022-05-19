@@ -1,0 +1,45 @@
+{
+  "languages": {
+    "cn": "中国語",
+    "en": "英語",
+    "ja": "日本語"
+  },
+  "components": {
+    "setting": {
+      "languages": "言語",
+      "about": "このプロジェクトについて"
+    }
+  },
+  "pages": {
+    "home": {
+      "title": "ホーム"
+    },
+    "me": {
+      "title": "自分"
+    },
+    "medias": {
+      "title": "メディア"
+    },
+    "medias-musics": {
+      "title": "音楽"
+    },
+    "medias-videos": {
+      "title": "ビデオ"
+    },
+    "views": {
+      "title": "画面管理"
+    },
+    "views-statistics": {
+      "title": "統計"
+    },
+    "views-create": {
+      "title": "作成"
+    },
+    "404": {
+      "title": "404"
+    },
+    "about": {
+      "title": "このプロジェクトについて"
+    }
+  }
+}

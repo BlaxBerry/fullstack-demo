@@ -1,0 +1,45 @@
+{
+  "languages": {
+    "cn": "CN",
+    "en": "EN",
+    "ja": "JP"
+  },
+  "components": {
+    "setting": {
+      "languages": "Languages",
+      "about": "About This Project"
+    }
+  },
+  "pages": {
+    "home": {
+      "title": "Home"
+    },
+    "me": {
+      "title": "Me"
+    },
+    "medias": {
+      "title": "Media"
+    },
+    "medias-musics": {
+      "title": "Musics"
+    },
+    "medias-videos": {
+      "title": "Videos"
+    },
+    "views": {
+      "title": "Views"
+    },
+    "viewsstatistics": {
+      "title": "Statistics"
+    },
+    "viewscreate": {
+      "title": "Create"
+    },
+    "404": {
+      "title": "404"
+    },
+    "about": {
+      "title": "About This Project"
+    }
+  }
+}

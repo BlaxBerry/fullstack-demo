@@ -1,13 +1,15 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 import { useTranslation } from "gatsby-plugin-react-i18next"
-import Layout from "../../components/Template"
+import Layout from "../components/Template"
+import BackToTop from "../components/Common/BackToTop"
 
 const IndexPage = (): JSX.Element => {
   const { t } = useTranslation()
+
   return (
-    <Layout pageTitle={t("pages.views-create.title")}>
-      {t("pages.views-create.title")}
+    <Layout pageTitle={t("pages.about.title")}>
+      <BackToTop>{t("pages.about.title")}</BackToTop>
     </Layout>
   )
 }

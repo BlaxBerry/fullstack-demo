@@ -1,4 +1,5 @@
 import * as React from "react"
+import { graphql } from "gatsby"
 import { Button } from "antd"
 import Layout from "../components/Template"
 import Result from "../components/Common/Results"
@@ -18,3 +19,17 @@ const IndexPage = (): JSX.Element => {
 }
 
 export default IndexPage
+
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`

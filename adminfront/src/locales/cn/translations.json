@@ -1,0 +1,45 @@
+{
+  "languages": {
+    "cn": "中文",
+    "en": "英语",
+    "ja": "日语"
+  },
+  "components": {
+    "setting": {
+      "languages": "语言",
+      "about": "项目说明"
+    }
+  },
+  "pages": {
+    "home": {
+      "title": "首页"
+    },
+    "me": {
+      "title": "个人信息"
+    },
+    "medias": {
+      "title": "媒体"
+    },
+    "medias-musics": {
+      "title": "音乐"
+    },
+    "medias-videos": {
+      "title": "视频"
+    },
+    "views": {
+      "title": "页面管理"
+    },
+    "views-statistics": {
+      "title": "数据详情"
+    },
+    "views-create": {
+      "title": "新增页面"
+    },
+    "404": {
+      "title": "404"
+    },
+    "about": {
+      "title": "项目说明"
+    }
+  }
+}
