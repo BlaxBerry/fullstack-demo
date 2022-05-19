@@ -29,24 +29,40 @@ const LeftSider = (props: LeftSiderProps): JSX.Element => {
   const [isCollapsed, { toggle }] = useBoolean(false)
 
   const { state: routeState } = useLocation()
-  // const pagename = routeState["pagename"]
-  console.log(routeState)
-
-  console.log(useRouteChange("home"))
-
-  const [menuItemDefaultSelectedKey] = useState(/*pagename ||*/ "home")
+  const pagename = routeState["pagename"]
+  const [menuItemDefaultSelectedKey] = useState(pagename || "home")
   const [menuSubmenuDefaultSelectedKey] = useState(
-    /*pagename?.substr(0, pagename.indexOf("/")) ||*/ null
+    pagename?.substr(0, pagename.indexOf("/")) || null
   )
 
   const items: MenuProps["items"] = [
+    // home
     {
-      label: <Link to={useRouteChange("home")}>{t("pages.home.title")}</Link>,
+      label: (
+        <Link
+          to={useRouteChange("home")}
+          state={{
+            pagename: "home",
+          }}
+        >
+          {t("pages.home.title")}
+        </Link>
+      ),
       key: "home",
       icon: React.createElement(HomeOutlined),
     },
+    // me
     {
-      label: <Link to={useRouteChange("me")}>{t("pages.me.title")}</Link>,
+      label: (
+        <Link
+          to={useRouteChange("me")}
+          state={{
+            pagename: "me",
+          }}
+        >
+          {t("pages.me.title")}
+        </Link>
+      ),
       key: "me",
       icon: React.createElement(UserOutlined),
     },
@@ -55,18 +71,30 @@ const LeftSider = (props: LeftSiderProps): JSX.Element => {
       key: "medias",
       icon: <SmileOutlined />,
       children: [
+        // media musics
         {
           label: (
-            <Link to={useRouteChange("medias/musics")}>
+            <Link
+              to={useRouteChange("medias/musics")}
+              state={{
+                pagename: "medias/musics",
+              }}
+            >
               {t("pages.medias-musics.title")}
             </Link>
           ),
           key: "medias/musics",
           icon: <CustomerServiceOutlined />,
         },
+        // media videos
         {
           label: (
-            <Link to={useRouteChange("medias/videos")}>
+            <Link
+              to={useRouteChange("medias/videos")}
+              state={{
+                pagename: "medias/videos",
+              }}
+            >
               {t("pages.medias-videos.title")}
             </Link>
           ),
@@ -80,18 +108,30 @@ const LeftSider = (props: LeftSiderProps): JSX.Element => {
       key: "views",
       icon: React.createElement(AppstoreOutlined),
       children: [
+        // views statistics
         {
           label: (
-            <Link to={useRouteChange("views/statistics")}>
+            <Link
+              to={useRouteChange("views/statistics")}
+              state={{
+                pagename: "views/statistics",
+              }}
+            >
               {t("pages.views-statistics.title")}
             </Link>
           ),
           key: "views/statistics",
           icon: React.createElement(PieChartOutlined),
         },
+        // views create
         {
           label: (
-            <Link to={useRouteChange("views/create")}>
+            <Link
+              to={useRouteChange("views/create")}
+              state={{
+                pagename: "views/create",
+              }}
+            >
               {t("pages.views-create.title")}
             </Link>
           ),
@@ -123,7 +163,6 @@ const LeftSider = (props: LeftSiderProps): JSX.Element => {
         defaultOpenKeys={[menuSubmenuDefaultSelectedKey]}
         mode="inline"
         items={items}
-        // onSelect={onMenuSelect}
       />
     </AntdSider>
   )
