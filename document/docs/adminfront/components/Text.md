@@ -8,6 +8,10 @@
 可能会修改
 :::
 
+:::caution TODO：
+Storybook
+:::
+
 ## 属性
 
 `<Tsxt/>` 的 `props` 类型如下：
@@ -34,6 +38,15 @@ interface CustomTextProps {
 <br/>
 
 ## 使用
+
+通过 `isText`、`isQuote`、`isPreBlock`指定要展示的内容类型
+
+:::tip
+
+`isText`、`isQuote`、`isPreBlock` 尽量不要同时出现，
+若同时出现则最后定义的覆盖前面的
+
+:::
 
 ### 普通文本
 
