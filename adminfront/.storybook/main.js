@@ -10,6 +10,14 @@ module.exports = {
   features: {
     storyStoreV7: true,
   },
+  webpackFinal: async (config, { configType }) => {
+    config.module.rules.push({
+      test: /\.scss$/,
+      use: ["style-loader", "css-loader", "sass-loader"],
+    })
+
+    return config
+  },
   core: {
     builder: "@storybook/builder-webpack5",
   },

@@ -8,7 +8,6 @@ export default {
 
 const Template: Story<CodeProps> = args => <CustomCode {...args} />
 
-// TODO: storybook SCSS 样式没导入
 export const Code = Template.bind({})
 Code.args = {
   children: `
@@ -20,7 +19,7 @@ Code.args = {
   `,
   block: true,
   strong: false,
-  copyable: false,
+  copyable: true,
 }
 
 Code.argTypes = {

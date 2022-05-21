@@ -13,8 +13,14 @@ const IndexPage = (): JSX.Element => {
   return (
     <Layout pageTitle={t("pages.about.title")}>
       <BackToTop>
-        <Title title={t("pages.about.title")} size={1} textAlign="center" />
-        <Title subTitle={"更新于 2022.05"} size={5} textAlign="center" />
+        <Title
+          title={t("pages.about.title")}
+          subTitle={"更新于 2022.05"}
+          size={1}
+          align="center"
+          withDivide
+        />
+        {/* <Title subTitle={"更新于 2022.05"} size={5} textAlign="center" /> */}
 
         <Text contentType="text">xxxx</Text>
         <Code block copyable>

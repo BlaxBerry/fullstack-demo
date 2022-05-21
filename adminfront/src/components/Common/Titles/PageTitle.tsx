@@ -1,7 +1,7 @@
 import React from "react"
 import { Helmet } from "react-helmet"
 
-interface PageTitleProps {
+export interface PageTitleProps {
   title: string
 }
 

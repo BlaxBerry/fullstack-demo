@@ -4,6 +4,7 @@ import { Typography } from "antd"
 import { TextProps } from "antd/lib/typography/Text"
 const { Paragraph } = Typography
 
+// TODO: 共通化
 /** 普通文本省略相关属性
  * https://ant.design/components/typography-cn/#API
  */

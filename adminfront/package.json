@@ -29,6 +29,7 @@
     "ahooks": "^3.3.12",
     "antd": "^4.20.5",
     "clsx": "^1.1.1",
+    "css-loader": "^6.7.1",
     "gatsby": "^4.14.1",
     "gatsby-plugin-antd": "^2.2.0",
     "gatsby-plugin-gatsby-cloud": "^4.14.0",
@@ -49,7 +50,9 @@
     "react-helmet": "^6.1.0",
     "react-i18next": "^11.16.9",
     "react-icons": "^4.3.1",
-    "sass": "^1.51.0"
+    "sass": "^1.51.0",
+    "sass-loader": "^13.0.0",
+    "style-loader": "^3.3.1"
   },
   "devDependencies": {
     "@babel/core": "^7.18.0",
