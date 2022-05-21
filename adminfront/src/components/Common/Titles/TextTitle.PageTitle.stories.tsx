@@ -10,7 +10,7 @@ const Template: Story<TextTitleProps> = args => <CustomTitle {...args} />
 
 export const Title = Template.bind({})
 
-Title.storyName = "Primary"
+Title.storyName = "TextTiitle"
 
 Title.args = {
   title: "主标题",

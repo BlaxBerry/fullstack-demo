@@ -2,7 +2,7 @@ import * as React from "react"
 import { graphql } from "gatsby"
 import { Button } from "antd"
 import Layout from "../components/Template"
-import Result from "../components/Common/Results"
+import Result from "../components/Common/Results/PageResult"
 
 const IndexPage = (): JSX.Element => {
   return (
