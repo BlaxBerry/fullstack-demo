@@ -1,8 +1,11 @@
 import React from "react"
+import clsx from "clsx"
 import { Typography } from "antd"
+import { TextProps } from "antd/lib/typography/Text"
 const { Paragraph } = Typography
 
-/* 普通文本省略相关属性
+// TODO: 共通化
+/** 普通文本省略相关属性
  * https://ant.design/components/typography-cn/#API
  */
 interface CustomEllipsis {
@@ -13,67 +16,71 @@ interface CustomEllipsis {
   tooltip?: boolean | React.ReactNode
 }
 
-interface CustomTextProps {
-  textAlign?: "center" | "left" | "right"
-  color?: "secondary" | "danger"
+/**
+ * 继承 AntDesign <Text/> 的 props
+ * @type text 普通文本
+ * @type quote 引用注释
+ */
+export interface CustomTextProps extends TextProps {
+  contentType: "text" | "quote"
+  children: string | React.ReactNode
+  align?: "center" | "left" | "right"
+  color?: string
   strong?: boolean
   ellipsis?: false | CustomEllipsis /* 自动溢出省略 */
   copyable?: boolean /* 文本可复制 */
-  isText?: boolean /* 普通文本 */
-  isCode?: boolean /* 代码包裹的文本 */
-  isQuote?: boolean /* 引用注释 */
-  isPreBlock?: boolean /* 代码块 */
-  children?: React.ReactNode /* 引用注释与代码块内容*/
   className?: string
   style?: React.CSSProperties
 }
 
-const Text = (props: CustomTextProps) => {
-  const {
-    color,
-    strong,
-    textAlign,
-    isText,
-    isCode,
-    isQuote,
-    isPreBlock,
-    ellipsis,
-  } = props
+const Text = ({
+  contentType = "text",
+  children,
+  align = "left",
+  strong = false,
+  color,
+  ellipsis = false,
+  copyable = false,
+  ...props
+}: CustomTextProps) => {
+  /* 类型 */
+  const isText = contentType === "text"
+  const isQuote = contentType === "quote"
+  /* 类型重复 */
+  const repeated = isText && isQuote
 
   return (
     <>
-      {/* 普通文本 */}
-      {isText && (
+      {/* 返回普通文本 */}
+      {isText && !repeated && (
         <Paragraph
-          type={color}
+          {...props}
           strong={strong}
-          className={props.className}
-          code={isCode}
-          style={{ textAlign, ...props.style }}
           ellipsis={ellipsis ? { ...ellipsis } : false}
+          copyable={copyable && { tooltips: false }}
+          className={clsx(props.className)}
+          style={{
+            textAlign: align,
+            color: color,
+            ...props.style,
+          }}
         >
-          {props.children}
+          {children}
         </Paragraph>
       )}
 
-      {/* 引用注释 */}
-      {isQuote && (
+      {/* 返回引用注释 */}
+      {isQuote && !repeated && (
         <Paragraph>
-          <blockquote>{props.children}</blockquote>
+          <blockquote>{children}</blockquote>
         </Paragraph>
       )}
 
-      {/* 代码块 */}
-      {/* TODO: copy 按钮位置*/}
-      {isPreBlock && (
-        <Paragraph>
-          <pre>
-            <Paragraph copyable>{props.children}</Paragraph>
-          </pre>
-        </Paragraph>
-      )}
+      {/* 错误：type 重复  */}
+      {repeated && "!!! 文本类型重复 !!!"}
 
-      {!props.children && "!!! EMPYTY CONTENT !!!"}
+      {/* 错误：empty 空内容 */}
+      {!children && "!!! 无内容 !!!"}
     </>
   )
 }

@@ -1,6 +1,7 @@
 $antd-layout-header-height: 64px;
 $antd-layout-footer-height: 48px;
 
+/* layout */
 .ant-layout {
   background: #001529 !important;
 
@@ -44,6 +45,19 @@ $antd-layout-footer-height: 48px;
         100vh - $antd-layout-header-height - $antd-layout-footer-height
       );
       padding: 20px 20px 0;
+    }
+  }
+}
+
+/* typography */
+
+.code-block-wrap {
+  position: relative;
+  .ant-typography {
+    .ant-typography-copy {
+      position: absolute;
+      top: 10px !important;
+      right: 10px !important;
     }
   }
 }

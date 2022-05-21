@@ -15,10 +15,9 @@ import {
   CustomerServiceOutlined,
   VideoCameraOutlined,
 } from "@ant-design/icons"
-import TopHeader from "../Header"
 import useRouteChange from "../../../hooks/useRouteChange"
 
-const { Sider: AntdSider } = AntdLayout
+const { Sider: AntdSider, Header: AntdHeader } = AntdLayout
 
 interface LeftSiderProps extends SiderProps {
   style?: React.CSSProperties
@@ -148,14 +147,17 @@ const LeftSider = (props: LeftSiderProps): JSX.Element => {
       collapsible
       collapsed={isCollapsed}
       onCollapse={toggle}
-      style={props.style}
+      style={{
+        height: "100vh",
+        ...props.style,
+      }}
     >
       {/* header logo*/}
-      <TopHeader>
+      <AntdHeader>
         <div className="logo" style={{ textAlign: "center", color: "white" }}>
           Logo
         </div>
-      </TopHeader>
+      </AntdHeader>
       {/* menu */}
       <Menu
         theme="dark"

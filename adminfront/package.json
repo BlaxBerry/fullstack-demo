@@ -16,14 +16,20 @@
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
     "prettier": "prettier --write .",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "license": "0BSD",
   "dependencies": {
+    "@storybook/addon-docs": "^6.5.3",
+    "@storybook/addon-postcss": "^2.0.0",
+    "@storybook/preset-scss": "^1.0.3",
     "@types/react-helmet": "^6.1.5",
     "ahooks": "^3.3.12",
     "antd": "^4.20.5",
     "clsx": "^1.1.1",
+    "css-loader": "^6.7.1",
     "gatsby": "^4.14.1",
     "gatsby-plugin-antd": "^2.2.0",
     "gatsby-plugin-gatsby-cloud": "^4.14.0",
@@ -44,9 +50,21 @@
     "react-helmet": "^6.1.0",
     "react-i18next": "^11.16.9",
     "react-icons": "^4.3.1",
-    "sass": "^1.51.0"
+    "sass": "^1.51.0",
+    "sass-loader": "^13.0.0",
+    "style-loader": "^3.3.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.18.0",
+    "@storybook/addon-actions": "^6.5.3",
+    "@storybook/addon-essentials": "^6.5.3",
+    "@storybook/addon-interactions": "^6.5.3",
+    "@storybook/addon-links": "^6.5.3",
+    "@storybook/builder-webpack5": "^6.5.3",
+    "@storybook/manager-webpack5": "^6.5.3",
+    "@storybook/react": "^6.5.3",
+    "@storybook/testing-library": "^0.0.11",
+    "babel-loader": "^8.2.5",
     "prettier": "^2.6.2"
   },
   "bugs": {
