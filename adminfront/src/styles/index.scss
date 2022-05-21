@@ -1,4 +1,5 @@
 @import "~antd/dist/antd.min.css";
 @import "./global.scss";
-@import "./cover.scss";
-@import "./theme.scss";
+@import "./cover.scss"; /* cover Antd style */
+@import "./theme.scss"; // TODO：主题
+@import "./custom/index.scss"; /* 自定义组件样式 */

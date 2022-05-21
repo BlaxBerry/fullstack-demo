@@ -1,4 +1,3 @@
-import * as React from "react"
 import { graphql, navigate } from "gatsby"
 import { useMount } from "ahooks"
 
