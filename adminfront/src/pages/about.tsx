@@ -4,8 +4,6 @@ import { useTranslation } from "gatsby-plugin-react-i18next"
 import Layout from "../components/Template"
 import BackToTop from "../components/Common/BackToTop"
 import { Title } from "../components/Common/Titles"
-import Text from "../components/Common/Text/Text"
-import Code from "../components/Common/Text/Code"
 
 const IndexPage = (): JSX.Element => {
   const { t } = useTranslation()
@@ -20,18 +18,6 @@ const IndexPage = (): JSX.Element => {
           align="center"
           withDivide
         />
-        {/* <Title subTitle={"更新于 2022.05"} size={5} textAlign="center" /> */}
-
-        <Text contentType="text">xxxx</Text>
-        <Code block copyable>
-          {`
-              name = '沃尼玛'\n
-              age = 28\n\n\n
-              def func():\n
-                  print('hello')\n\n
-              func()
-          `}
-        </Code>
       </BackToTop>
     </Layout>
   )

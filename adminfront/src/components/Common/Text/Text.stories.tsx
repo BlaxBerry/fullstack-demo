@@ -49,7 +49,7 @@ Text.argTypes = {
     },
     /* Control */
     control: {
-      type: "radio",
+      type: "select",
       options: ["text", "quote"],
     },
   },
