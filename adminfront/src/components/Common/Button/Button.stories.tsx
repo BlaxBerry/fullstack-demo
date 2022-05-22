@@ -5,6 +5,9 @@ import { SearchOutlined } from "@ant-design/icons"
 export default {
   title: "Common/Button",
   component: CustomButton,
+  parameters: {
+    layout: "centered",
+  },
 } as Meta
 
 const Template: Story<ButtonProps> = args => <CustomButton {...args} />
