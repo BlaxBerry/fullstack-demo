@@ -1,6 +1,6 @@
 import React, { useState, useEffect, CSSProperties } from "react"
 import clsx from "clsx"
-import { Button as AntdButton, ButtonProps as AntdButtonProps } from "antd"
+import { Button as AntdButton } from "antd"
 import { ButtonShape as AntdButtonShape, ButtonType } from "antd/lib/button"
 import { LoadingOutlined } from "@ant-design/icons"
 import { SizeType } from "antd/lib/config-provider/SizeContext"
@@ -9,7 +9,7 @@ import { SizeType } from "antd/lib/config-provider/SizeContext"
  * 继承 Antd <Button/> props
  * https://ant.design/components/button-cn/#components-button-demo-basic
  */
-export interface ButtonProps extends AntdButtonProps {
+export interface ButtonProps {
   children: string | React.ReactNode
   block?: boolean /* 类型：充满父标签的块级按钮 */
   text?: boolean /* 类型：文本按钮 */
