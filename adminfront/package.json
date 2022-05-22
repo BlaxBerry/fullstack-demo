@@ -34,6 +34,7 @@
     "eslint": "^8.16.0",
     "eslint-config-react-app": "^7.0.1",
     "eslint-loader": "^4.0.2",
+    "eslint-plugin-storybook": "^0.5.12",
     "gatsby": "^4.14.1",
     "gatsby-plugin-antd": "^2.2.0",
     "gatsby-plugin-gatsby-cloud": "^4.14.0",
