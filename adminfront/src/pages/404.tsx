@@ -1,18 +1,38 @@
 import * as React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
+import { useTranslation } from "gatsby-plugin-react-i18next"
 import { Button } from "antd"
 import Layout from "../components/Template"
 import Result from "../components/Common/Results/PageResult"
+import Text from "../components/Common/Text/Text"
+import useRouteChange from "../hooks/useRouteChange"
 
 const IndexPage = (): JSX.Element => {
+  const { t } = useTranslation()
+
+  const messages = [
+    t("pages.404.message-1"),
+    t("pages.404.message-2"),
+    t("pages.404.message-3"),
+  ]
+
   return (
-    <Layout pageTitle={"404"}>
+    <Layout pageTitle={t("pages.404.title")}>
       <Result
         status="404"
-        title="404"
-        subTitle="Sorry, the page you visited does not exist."
+        title={t("pages.404.title")}
+        // subTitle={t("pages.404.subTitle")}
       >
-        <Button type="primary">Back Home</Button>
+        <div>
+          {messages.map((str, index) => (
+            <Text key={index} align="center" color="grey">
+              {str}
+            </Text>
+          ))}
+        </div>
+        <Link to={useRouteChange("home")} replace={true}>
+          <Button type="primary">{t("pages.404.backHome")}</Button>
+        </Link>
       </Result>
     </Layout>
   )
