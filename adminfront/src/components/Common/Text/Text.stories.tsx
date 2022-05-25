@@ -17,7 +17,7 @@ export const Text = Template.bind({})
  * https://storybook.js.org/docs/react/writing-stories/args
  */
 Text.args = {
-  contentType: "text",
+  quote: false,
   children:
     "你好你好你好你好你好你好你好你好你好你好你好你好你好你你好你好你好你好你好你好你好你你好你好你好你好你好你好你好你你好你好你好你好你好你好你好你你好你好你好你好你好你好你好你你好你好你好你好你好你好你好你你好你好你好你好你好你好你好你你好你好你好你好你好你好你好你你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好",
   align: "left",
@@ -38,26 +38,18 @@ Text.args = {
  * @Controls https://storybook.js.org/docs/react/essentials/controls
  */
 Text.argTypes = {
-  contentType: {
-    type: { name: "string", required: true },
-    description: "文本类型（`text` | `quote`）",
+  quote: {
+    description: "文本是否为引用注释",
     table: {
-      /* Description  */
-      type: { summary: "string" },
-      /* Default */
-      defaultValue: { summary: "text" /* detail: '点击后展开内容' */ },
-    },
-    /* Control */
-    control: {
-      type: "select",
-      options: ["text", "quote"],
+      type: { summary: "boolean" },
+      defaultValue: { summary: "false" },
     },
   },
   children: {
     type: { name: "string", required: true },
     description: "文本内容",
     table: {
-      type: { summary: "string | React.ReactNode" },
+      type: { summary: "string | ReactNode" },
       defaultValue: { summary: "!!! 无内容 !!!" },
     },
     control: {
