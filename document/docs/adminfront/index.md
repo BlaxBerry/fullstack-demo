@@ -2,28 +2,21 @@
 sidebar_position: 1
 ---
 
-# 简介
+# AdminFront
 
-:::caution
+**AdminFront** 是用于个人练习的前端项目
 
-TODO：
+## 简介
 
+:::caution TODO:
 :::
 
 ## 技术栈
 
-:::caution
+[Gatsby.js](#)
 
-可能会修改
+[Ant Design](#)
 
-:::
+[Typescript](#)
 
-- [Gatsby](#)
-
-- [TypeScript](#)
-
-- [Ant Design](#)
-
-- [react-i18n](#)
-
-- [ahooks](#)
+[Storybook](#)
