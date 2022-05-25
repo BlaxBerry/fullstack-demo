@@ -1,29 +1,19 @@
 #
 
-admin front side + server side + document
+## AdminFront Side
 
-## Tech Stacks
+Front side admin management (with storybook)
 
-### Front
+[check more details ->](./adminfront/README.md)
 
-[chekc more ->](./adminfront/README.md)
+## Server Side
 
-- [Gatsby]()
-- [TypeScript]()
-- [AntDesign]()
-- [ApolloClient]()
+> not ready yet
 
-### Server
+[check more details ->](./serverside)
 
-> Not Ready yet, still learning
+## Document
 
-[chekc more ->]()
+Documents for AdminFront Side and Server Side
 
-- [Django]()
-- [Python]()
-
-### Document
-
-[chekc more ->](./document/README.md)
-
-- [Docusaurus]()
+[check more details ->](./document/)
