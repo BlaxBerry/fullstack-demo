@@ -1,8 +1,8 @@
 {
   "languages": {
-    "cn": "CN",
+    "zh": "ZH",
     "en": "EN",
-    "ja": "JP"
+    "ja": "JA"
   },
   "components": {
     "setting": {

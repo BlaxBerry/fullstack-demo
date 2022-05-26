@@ -8,25 +8,38 @@ import {
   SettingOutlined,
   GlobalOutlined,
 } from "@ant-design/icons/lib/icons"
-import useRouteChange from "../../hooks/useRouteChange"
+import ReactCountryFlag from "react-country-flag"
+import useRouteChange from "../../../hooks/useRouteChange"
 
 const HeaderSetting = (): JSX.Element => {
   const { t } = useTranslation()
-  const { changeLanguage } = useI18next()
+  const { changeLanguage, language } = useI18next()
 
   const langs = [
     {
-      label: t("languages.cn"),
-      key: "cn",
+      label: (
+        <>
+          <ReactCountryFlag countryCode="CN" /> {t("languages.zh")}
+        </>
+      ),
+      key: "zh",
       icon: null,
     },
     {
-      label: t("languages.en"),
+      label: (
+        <>
+          <ReactCountryFlag countryCode="US" /> {t("languages.en")}
+        </>
+      ),
       key: "en",
       icon: null,
     },
     {
-      label: t("languages.ja"),
+      label: (
+        <>
+          <ReactCountryFlag countryCode="JP" /> {t("languages.ja")}
+        </>
+      ),
       key: "ja",
       icon: null,
     },
@@ -131,19 +144,28 @@ const HeaderSetting = (): JSX.Element => {
   ]
 
   const onSelected = ({ key }) => {
-    console.log(key)
+    // console.log(key)
 
-    // change languages
+    /** 切换语言
+     * 语言选项的 menuItem key 即 lang 代码
+     */
     switch (key) {
-      case "cn":
+      case "zh":
       case "en":
       case "ja":
         changeLanguage(key)
-        break
+        localStorage.setItem("fullstack-demo-language", key)
     }
   }
 
-  return <Menu theme="dark" items={items} onClick={onSelected} />
+  return (
+    <Menu
+      theme="dark"
+      items={items}
+      onClick={onSelected}
+      defaultSelectedKeys={[language]}
+    />
+  )
 }
 
 export default HeaderSetting
