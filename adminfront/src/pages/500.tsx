@@ -11,17 +11,16 @@ const IndexPage = (): JSX.Element => {
   const { t } = useTranslation()
 
   const messages = [
-    t("pages.404.message-1"),
-    t("pages.404.message-2"),
-    t("pages.404.message-3"),
+    t("pages.500.message-1"),
+    t("pages.500.message-2") + "https://github.com/BlaxBerry",
   ]
 
   return (
-    <Layout pageTitle={t("pages.404.title")}>
+    <Layout pageTitle={t("pages.500.title")}>
       <Result
-        status="404"
-        title={t("pages.404.title")}
-        // subTitle={t("pages.404.subTitle")}
+        status="500"
+        title={t("pages.500.title")}
+        subTitle={t("pages.500.subTitle")}
       >
         <div>
           {messages.map((str, index) => (
