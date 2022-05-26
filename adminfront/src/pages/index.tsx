@@ -1,9 +1,13 @@
 import { graphql, navigate } from "gatsby"
 import { useMount } from "ahooks"
+import { defaultLanguage } from "../configs/defaultValues"
 
 const IndexPage = (): JSX.Element => {
+  const languageActive =
+    localStorage.getItem("fullstack-demo-language") || defaultLanguage
+
   useMount(() => {
-    navigate("/home")
+    navigate(`${languageActive}/home`)
   })
 
   return null
