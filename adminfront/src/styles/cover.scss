@@ -30,7 +30,9 @@ $antd-layout-footer-height: 48px;
     }
 
     .ant-layout-sider-children {
+
       .ant-menu {
+
         .ant-menu-item {
           margin-bottom: 0;
           margin-top: 0;
@@ -40,6 +42,7 @@ $antd-layout-footer-height: 48px;
   }
 
   .ant-layout-content {
+
     .true-content {
       min-height: calc(
         100vh - $antd-layout-header-height - $antd-layout-footer-height
@@ -55,6 +58,7 @@ $antd-layout-footer-height: 48px;
   position: relative;
 
   .ant-typography {
+
     .ant-typography-copy {
       position: absolute;
       right: 10px !important;
