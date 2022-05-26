@@ -22,7 +22,7 @@ interface CustomEllipsis {
  * @type quote 引用注释
  */
 export interface CustomTextProps extends TextProps {
-  contentType: "text" | "quote"
+  quote?: boolean
   children: string | React.ReactNode
   align?: "center" | "left" | "right"
   color?: string
@@ -34,7 +34,7 @@ export interface CustomTextProps extends TextProps {
 }
 
 const Text = ({
-  contentType = "text",
+  quote = false,
   children,
   align = "left",
   strong = false,
@@ -43,16 +43,10 @@ const Text = ({
   copyable = false,
   ...props
 }: CustomTextProps) => {
-  /* 类型 */
-  const isText = contentType === "text"
-  const isQuote = contentType === "quote"
-  /* 类型重复 */
-  const repeated = isText && isQuote
-
   return (
     <>
       {/* 返回普通文本 */}
-      {isText && !repeated && (
+      {!quote && (
         <Paragraph
           {...props}
           strong={strong}
@@ -70,14 +64,11 @@ const Text = ({
       )}
 
       {/* 返回引用注释 */}
-      {isQuote && !repeated && (
+      {quote && (
         <Paragraph>
           <blockquote>{children}</blockquote>
         </Paragraph>
       )}
-
-      {/* 错误：type 重复  */}
-      {repeated && "!!! 文本类型重复 !!!"}
 
       {/* 错误：empty 空内容 */}
       {!children && "!!! 无内容 !!!"}

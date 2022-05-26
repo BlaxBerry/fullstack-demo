@@ -46,19 +46,19 @@ module.exports = {
       resolve: `gatsby-plugin-react-i18next`,
       options: {
         localeJsonSourceName: `locale`, // name given to `gatsby-source-filesystem` plugin.
-        languages: [`ja`, `en`, "cn"],
-        defaultLanguage: `cn`,
+        languages: [`zh`, `en`, `ja`],
+        defaultLanguage: `zh`,
         generateDefaultLanguagePage: true,
         redirect: false, // this redirects to operative system default language if set to true
         pages: [
           {
             matchPath: "/",
             getLanguageFromPath: true,
-            excludeLanguages: ["cn"],
+            excludeLanguages: ["zh"],
           },
           {
             matchPath: "/preview",
-            languages: ["cn"],
+            languages: ["zh"],
           },
         ],
       },

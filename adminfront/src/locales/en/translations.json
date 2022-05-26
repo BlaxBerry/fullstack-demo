@@ -1,8 +1,8 @@
 {
   "languages": {
-    "cn": "CN",
+    "zh": "ZH",
     "en": "EN",
-    "ja": "JP"
+    "ja": "JA"
   },
   "components": {
     "setting": {
@@ -36,7 +36,19 @@
       "title": "Create View"
     },
     "404": {
-      "title": "404"
+      "title": "Error 404",
+      "subTitle": "The requested URL was not found.",
+      "backHome": "Back Home",
+      "message-1": "The page you're looking for could not be found.",
+      "message-2": "The URL requested is not correct, or the page does not exist.",
+      "message-3": "Please return to Home and see other pages."
+    },
+    "500": {
+      "title": "Error 500",
+      "subTitle": "Ooops, Internal Server Error",
+      "backHome": "Back Home",
+      "message-1": "Some problem with the server, request was unable to complete.",
+      "message-2": "Please report to: "
     },
     "about": {
       "title": "About This Project"

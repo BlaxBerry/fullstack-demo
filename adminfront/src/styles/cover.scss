@@ -30,16 +30,19 @@ $antd-layout-footer-height: 48px;
     }
 
     .ant-layout-sider-children {
+
       .ant-menu {
+
         .ant-menu-item {
-          margin-top: 0;
           margin-bottom: 0;
+          margin-top: 0;
         }
       }
     }
   }
 
   .ant-layout-content {
+
     .true-content {
       min-height: calc(
         100vh - $antd-layout-header-height - $antd-layout-footer-height
@@ -53,11 +56,13 @@ $antd-layout-footer-height: 48px;
 
 .code-block-wrap {
   position: relative;
+
   .ant-typography {
+
     .ant-typography-copy {
       position: absolute;
-      top: 10px !important;
       right: 10px !important;
+      top: 10px !important;
     }
   }
 }

@@ -57,7 +57,7 @@ const Button = (props: ButtonProps): JSX.Element => {
     /* 设置尺寸 */
     if (large) setSize("large")
     if (small) setSize("small")
-  }, [])
+  }, [text, dashed, fab, capsule, large, small])
 
   /* TODO：使用不规范时的提示信息
   const [errorMessages, setErrorMessages] = useState<Array<string>>([])

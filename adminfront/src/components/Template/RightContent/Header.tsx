@@ -2,7 +2,7 @@ import * as React from "react"
 import { Dropdown } from "antd"
 import { Layout as AntdLayout } from "antd"
 import { SettingOutlined as AntdIconSetting } from "@ant-design/icons/lib/icons"
-import { HeaderSetting } from "../../Setting"
+import { HeaderSetting } from "../../Common/Setting"
 const { Header: AntdHeader } = AntdLayout
 
 const ContentHeader = (): JSX.Element => {
