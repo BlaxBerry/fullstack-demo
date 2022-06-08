@@ -58,11 +58,16 @@ $antd-layout-footer-height: 48px;
   position: relative;
 
   .ant-typography {
-
+    
     .ant-typography-copy {
       position: absolute;
       right: 10px !important;
       top: 10px !important;
     }
   }
+}
+
+// results
+.ant-result-extra > * {
+  margin-right: 0 !important;
 }
