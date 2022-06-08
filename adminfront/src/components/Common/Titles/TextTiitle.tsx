@@ -37,16 +37,14 @@ const Title = (props: TextTitleProps) => {
   } = props
 
   const titleLayout = (props: TextTitleProps) => (
-    <>
+    <div className={props.className} style={{ ...props.style }}>
       {/* 返回主标题 */}
       <AntdTitle
         level={size}
-        className={props.className}
         style={{
           color: color,
-          marginBottom: subTitle ? 0 : "auto",
+          marginBottom: 0,
           textAlign: align,
-          ...props.style,
         }}
       >
         {title ? title : "!!! EMPYTY CONTENT !!!"}
@@ -60,7 +58,7 @@ const Title = (props: TextTitleProps) => {
           {subTitle}
         </AntdTitle>
       )}
-    </>
+    </div>
   )
 
   return (
@@ -70,7 +68,13 @@ const Title = (props: TextTitleProps) => {
 
       {/* 返回搭配分割线的标题 */}
       {withDivide && (
-        <Divider orientation={dividerPosition}>{titleLayout(props)}</Divider>
+        <Divider
+          orientation={dividerPosition}
+          className={props.className}
+          style={{ ...props.style }}
+        >
+          {titleLayout(props)}
+        </Divider>
       )}
     </>
   )
